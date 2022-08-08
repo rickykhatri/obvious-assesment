@@ -56,10 +56,6 @@ dependencies {
     //GSON lib
     implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
 
-    // https://insert-koin.io/
-    /*implementation 'org.koin:koin-android:2.2.2'
-    implementation 'org.koin:koin-androidx-scope:2.2.2'
-    implementation 'org.koin:koin-androidx-viewmodel:2.2.2'*/
     // Koin for Android
     implementation 'io.insert-koin:koin-android:2.2.2'
     implementation 'io.insert-koin:koin-androidx-scope:2.2.2'
@@ -69,10 +65,4 @@ dependencies {
     testImplementation 'io.insert-koin:koin-test:2.2.2'
     testImplementation 'io.insert-koin:koin-test-junit4:2.2.2'
 
-
-    // koin test
-    testImplementation 'org.koin:koin-test:2.2.2'
-
-    // koin instrumentation tests
-    androidTestImplementation 'org.koin:koin-test:2.2.2'
 }

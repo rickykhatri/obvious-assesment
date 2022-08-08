@@ -21,7 +21,7 @@ abstract class BaseActivity<T : ViewDataBinding, V : BaseViewModel> : AppCompatA
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         performDataBinding()
-        supportActionBar?.setDisplayShowTitleEnabled(false)
+        supportActionBar?.setDisplayShowTitleEnabled(true)
 
     }
 

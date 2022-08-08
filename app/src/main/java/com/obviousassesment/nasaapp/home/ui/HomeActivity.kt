@@ -1,18 +1,27 @@
 package com.obviousassesment.nasaapp.home.ui
 
 import android.os.Bundle
+import android.view.ViewGroup
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.ViewModelProvider
+import androidx.recyclerview.widget.GridLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.obviousassesment.nasaapp.BR
 import com.obviousassesment.nasaapp.R
 import com.obviousassesment.nasaapp.databinding.ActivityHomeBinding
 import com.obviousassesment.nasaapp.home.BaseActivity
 import com.obviousassesment.nasaapp.home.model.ImagesData
 import com.obviousassesment.nasaapp.home.viewmodel.HomeViewModel
+import org.koin.androidx.viewmodel.ext.android.viewModel
 
+/**
+ * This class shows images from json file in form of grid.
+ */
 class HomeActivity : BaseActivity<ActivityHomeBinding, HomeViewModel>() {
 
-    private lateinit var  homeViewModel: HomeViewModel
+    private val  homeViewModel: HomeViewModel by viewModel()
+
+    private val spanCount = 2
 
     override fun getLayoutId() = R.layout.activity_home
 
@@ -24,12 +33,12 @@ class HomeActivity : BaseActivity<ActivityHomeBinding, HomeViewModel>() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home)
 
-        initializeView()
+        initView()
         observeImagesData()
     }
 
-    private fun initializeView() {
-        homeViewModel = ViewModelProvider(this).get(HomeViewModel::class.java)
+    private fun initView() {
+        supportActionBar?.title = getString(R.string.home)
     }
 
     private fun observeImagesData() {
@@ -45,8 +54,11 @@ class HomeActivity : BaseActivity<ActivityHomeBinding, HomeViewModel>() {
      */
     private fun setAdapter(imagesData: ImagesData) {
         val homeAdapter = HomeAdapter()
-        getViewDataBinding()?.adapter = homeAdapter
+        val rvImagesData = findViewById<RecyclerView>(R.id.rvImagesData)
+        rvImagesData?.apply {
+            adapter = homeAdapter
+        }
+        rvImagesData?.layoutManager = GridLayoutManager(this,spanCount)
         homeAdapter.setData(imagesData)
     }
-
 }

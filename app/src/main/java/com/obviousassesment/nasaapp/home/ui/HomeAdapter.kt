@@ -8,11 +8,15 @@ import androidx.recyclerview.widget.RecyclerView.ViewHolder
 import coil.load
 import com.obviousassesment.nasaapp.R
 import com.obviousassesment.nasaapp.databinding.ItemGridBinding
+import com.obviousassesment.nasaapp.home.Utils.AppUtils
 import com.obviousassesment.nasaapp.home.model.ImagesData
 
 class HomeAdapter : RecyclerView.Adapter<ViewHolder>() {
 
     private var imagesDataList: ImagesData? = null
+
+    private val heightFactor = AppUtils.getScreenHeight() / 4
+    private val widthFactor = AppUtils.getScreenWidth() / 2
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val layoutInflater = LayoutInflater.from(parent.context)
@@ -28,6 +32,9 @@ class HomeAdapter : RecyclerView.Adapter<ViewHolder>() {
     inner class ItemGridViewHolder(private val binding: ItemGridBinding) :
         RecyclerView.ViewHolder(binding.root) {
             fun bind(position: Int) {
+                binding.ivGrid.layoutParams.height = heightFactor
+                binding.ivGrid.layoutParams.width = widthFactor
+
                 imagesDataList?.let {
                     binding.ivGrid.load(it[position].url) {
                         placeholder(R.drawable.placeholder)
@@ -42,7 +49,7 @@ class HomeAdapter : RecyclerView.Adapter<ViewHolder>() {
     }
 
     override fun getItemCount(): Int {
-        return imagesDataList?.size?:0
+        return imagesDataList?.size!!
     }
 
     fun setData(imagesData: ImagesData) {
