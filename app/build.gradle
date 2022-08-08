@@ -1,6 +1,7 @@
 plugins {
     id 'com.android.application'
     id 'org.jetbrains.kotlin.android'
+    id 'kotlin-kapt'
 }
 
 android {
@@ -29,6 +30,14 @@ android {
     kotlinOptions {
         jvmTarget = '11'
     }
+
+    buildFeatures {
+        dataBinding true
+    }
+
+    kapt {
+        generateStubs = true
+    }
 }
 
 dependencies {
@@ -43,4 +52,27 @@ dependencies {
 
     //Coil image loading lib
     implementation("io.coil-kt:coil:1.0.0-rc3")
+
+    //GSON lib
+    implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
+
+    // https://insert-koin.io/
+    /*implementation 'org.koin:koin-android:2.2.2'
+    implementation 'org.koin:koin-androidx-scope:2.2.2'
+    implementation 'org.koin:koin-androidx-viewmodel:2.2.2'*/
+    // Koin for Android
+    implementation 'io.insert-koin:koin-android:2.2.2'
+    implementation 'io.insert-koin:koin-androidx-scope:2.2.2'
+    implementation 'io.insert-koin:koin-androidx-viewmodel:2.2.2'
+
+    // Koin Test
+    testImplementation 'io.insert-koin:koin-test:2.2.2'
+    testImplementation 'io.insert-koin:koin-test-junit4:2.2.2'
+
+
+    // koin test
+    testImplementation 'org.koin:koin-test:2.2.2'
+
+    // koin instrumentation tests
+    androidTestImplementation 'org.koin:koin-test:2.2.2'
 }

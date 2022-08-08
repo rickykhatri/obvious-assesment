@@ -1,0 +1,7 @@
+ext {
+    // dependency versions, please add new versions sorted alphabetically by the name
+    dependencyVersions = [
+            koinVersion    : '2.2.2',
+            retrofitVersion: '2.9.0'
+    ]
+}

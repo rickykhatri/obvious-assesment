@@ -1,13 +1,14 @@
 package com.obviousassesment.nasaapp.home.viewmodel
 
 import android.app.Application
-import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.MutableLiveData
+import com.obviousassesment.nasaapp.home.baseViewmodel.BaseViewModel
 import com.obviousassesment.nasaapp.home.configurations.EnvironmentConfig
+import com.obviousassesment.nasaapp.home.model.ImagesData
 
-class HomeViewModel(application: Application) : AndroidViewModel(application) {
+class HomeViewModel(application: Application) : BaseViewModel(application) {
 
-    val loadImagesData = MutableLiveData<String>()
+    val loadImagesData = MutableLiveData<ImagesData>()
 
     init {
         loadImagesData.postValue(EnvironmentConfig.getJsonDataFromAsset())

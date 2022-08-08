@@ -1,20 +1,35 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:orientation="vertical"
-    tools:context=".home.HomeActivity">
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
 
-<include layout="@layout/layout_app_bar"/>
+    <data>
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:layout_gravity="center"
-        app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
-        app:spanCount="2"
-        tools:listitem="@layout/item_grid"
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent"/>
+        <variable
+            name="homeViewModel"
+            type="com.obviousassesment.nasaapp.home.viewmodel.HomeViewModel" />
+        <variable
+            name="adapter"
+            type="com.obviousassesment.nasaapp.home.ui.HomeAdapter" />
 
-</LinearLayout>
+    </data>
+
+    <LinearLayout xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context=".home.ui.HomeActivity">
+
+        <include layout="@layout/layout_app_bar" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvImagesData"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+            app:spanCount="2"
+            android:adapter="@{adapter}"
+            tools:listitem="@layout/item_grid" />
+
+    </LinearLayout>
+</layout>

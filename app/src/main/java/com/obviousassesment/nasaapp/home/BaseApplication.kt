@@ -6,6 +6,10 @@ import android.app.Application
 import android.content.Context
 import android.content.pm.ActivityInfo
 import android.os.Bundle
+import com.obviousassesment.nasaapp.home.di.applicationModules
+import org.koin.android.ext.koin.androidContext
+import org.koin.android.ext.koin.androidLogger
+import org.koin.core.context.startKoin
 
 
 /**
@@ -30,6 +34,15 @@ class BaseApplication : Application() {
         super.onCreate()
 
         setOrientation()
+
+        startKoin {
+            // Use Koin Android Logger
+            androidLogger(level = org.koin.core.logger.Level.NONE)
+            // declare Android context
+            androidContext(this@BaseApplication)
+            // declare modules to use
+            modules(applicationModules)
+        }
     }
 
     override fun attachBaseContext(base: Context?) {
