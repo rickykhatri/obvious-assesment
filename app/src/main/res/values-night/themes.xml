@@ -13,4 +13,7 @@
         <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
     </style>
+
+    <dimen name="text_size_xx_large">16sp</dimen>
+    <dimen name="text_size_medium">12sp</dimen>
 </resources>

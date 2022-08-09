@@ -1,4 +1,4 @@
-package com.obviousassesment.nasaapp.home.baseViewmodel
+package com.obviousassesment.nasaapp.home
 
 import android.app.Application
 import androidx.lifecycle.AndroidViewModel

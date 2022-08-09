@@ -1,6 +1,7 @@
-package com.obviousassesment.nasaapp.home.ui
+package com.obviousassesment.nasaapp.home.ui.adapter
 
 import android.view.LayoutInflater
+import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.RecyclerView
@@ -11,7 +12,7 @@ import com.obviousassesment.nasaapp.databinding.ItemGridBinding
 import com.obviousassesment.nasaapp.home.Utils.AppUtils
 import com.obviousassesment.nasaapp.home.model.ImagesData
 
-class HomeAdapter : RecyclerView.Adapter<ViewHolder>() {
+class HomeAdapter(val imageClickListener: OnImageClickListener) : RecyclerView.Adapter<ViewHolder>() {
 
     private var imagesDataList: ImagesData? = null
 
@@ -41,6 +42,9 @@ class HomeAdapter : RecyclerView.Adapter<ViewHolder>() {
                         error(R.drawable.placeholder)
                     }
                 }
+                binding.position = position
+                binding.onItemClickListener = imageClickListener
+                binding.executePendingBindings()
             }
     }
 
@@ -55,5 +59,9 @@ class HomeAdapter : RecyclerView.Adapter<ViewHolder>() {
     fun setData(imagesData: ImagesData) {
         imagesDataList = imagesData
         notifyDataSetChanged()
+    }
+
+    interface OnImageClickListener {
+        fun onImageClick(view: View, position: Int)
     }
 }

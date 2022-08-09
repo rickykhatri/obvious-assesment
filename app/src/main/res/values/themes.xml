@@ -2,8 +2,8 @@
     <!-- Base application theme. -->
     <style name="Theme.NasaPicturesApp" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
         <!-- Primary brand color. -->
-        <item name="colorPrimary">@color/purple_500</item>
-        <item name="colorPrimaryVariant">@color/purple_700</item>
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryVariant">@color/colorPrimaryDark</item>
         <item name="colorOnPrimary">@color/white</item>
         <!-- Secondary brand color. -->
         <item name="colorSecondary">@color/teal_200</item>
@@ -21,4 +21,22 @@
         <item name="android:background">@android:color/white</item>
         <item name="android:layout_gravity">center</item>
     </style>
+
+    <style name="DotTablayout">
+        <item name="android:background">@android:color/transparent</item>
+    </style>
+
+    <style name="TextTitle">
+        <item name="android:textSize">@dimen/text_size_xx_large</item>
+        <item name="android:textColor">@color/colorPrimaryHeader</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="TextDescription">
+        <item name="android:textSize">@dimen/text_size_medium</item>
+        <item name="android:textColor">@color/black</item>
+    </style>
+
+    <dimen name="text_size_xx_large">14sp</dimen>
+    <dimen name="text_size_medium">12sp</dimen>
 </resources>

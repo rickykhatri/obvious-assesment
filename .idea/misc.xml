@@ -5,8 +5,13 @@
       <map>
         <entry key="../../../../layout/custom_preview.xml" value="0.10731414868105515" />
         <entry key="app/src/main/res/drawable/grid_animation.xml" value="0.1175" />
+        <entry key="app/src/main/res/drawable/onboarding_tab_selector.xml" value="0.1175" />
+        <entry key="app/src/main/res/drawable/selected_dot.xml" value="0.1175" />
+        <entry key="app/src/main/res/drawable/unselected_dot.xml" value="0.1175" />
         <entry key="app/src/main/res/layout/activity_home.xml" value="0.335" />
+        <entry key="app/src/main/res/layout/activity_image_detail.xml" value="0.2578125" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.2359375" />
+        <entry key="app/src/main/res/layout/fragment_image_detail.xml" value="0.2578125" />
         <entry key="app/src/main/res/layout/item_grid.xml" value="1.0" />
         <entry key="app/src/main/res/layout/layout_app_bar.xml" value="0.2578125" />
       </map>

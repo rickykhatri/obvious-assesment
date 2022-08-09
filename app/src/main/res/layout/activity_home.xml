@@ -8,7 +8,7 @@
             type="com.obviousassesment.nasaapp.home.viewmodel.HomeViewModel" />
         <variable
             name="adapter"
-            type="com.obviousassesment.nasaapp.home.ui.HomeAdapter" />
+            type="com.obviousassesment.nasaapp.home.ui.adapter.HomeAdapter" />
 
     </data>
 
