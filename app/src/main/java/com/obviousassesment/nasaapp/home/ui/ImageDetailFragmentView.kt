@@ -47,10 +47,7 @@ class ImageDetailFragmentView : Fragment() {
         val tvTitle = view.findViewById<TextView>(R.id.tvTitle)
         val tvDescription = view.findViewById<TextView>(R.id.tvDescription)
         imageResId?.let { id ->
-            ivImageDetail.load(id){
-                placeholder(R.drawable.placeholder)
-                error(R.drawable.placeholder)
-            }
+            ivImageDetail.load(id)
         }
         val title = arguments?.getString(TITLE)
         title?.let { imageTitle ->

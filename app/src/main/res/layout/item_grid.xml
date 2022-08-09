@@ -20,7 +20,7 @@
 
         <ImageView
             android:id="@+id/ivGrid"
-            android:scaleType="fitXY"
+            android:scaleType="centerCrop"
             android:onClick="@{(v) -> onItemClickListener.onImageClick(v,position)}"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

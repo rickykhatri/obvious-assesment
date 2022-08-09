@@ -61,8 +61,4 @@ dependencies {
     implementation 'io.insert-koin:koin-androidx-scope:2.2.2'
     implementation 'io.insert-koin:koin-androidx-viewmodel:2.2.2'
 
-    // Koin Test
-    testImplementation 'io.insert-koin:koin-test:2.2.2'
-    testImplementation 'io.insert-koin:koin-test-junit4:2.2.2'
-
 }

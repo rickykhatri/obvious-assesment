@@ -4,4 +4,5 @@
     <dimen name="selected_dot_width">6dp</dimen>
     <dimen name="unselected_dot_width">1dp</dimen>
     <dimen name="dimension_30">30dp</dimen>
+    <dimen name="tab_layout_height">20dp</dimen>
 </resources>
