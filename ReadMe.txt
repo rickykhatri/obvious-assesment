@@ -2,6 +2,8 @@ Nasa Pictures App
 
 This app is just a testing exercise which includes following tools and libraries.
 
+This app is developed with MVVM architecture
+
 1) //Coil image loading lib
        implementation("io.coil-kt:coil:1.0.0-rc3")
 
